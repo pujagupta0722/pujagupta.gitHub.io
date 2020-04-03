@@ -1,62 +1,98 @@
-body{
-  margin: 2%;
-  border: 1px solid black;
-  background-color: black;
-}
-#image{ 
-    width: 580px;
-    height: 100px;
-    border:4px solid black;
-    margin:10px auto 0px auto;
-    background-color: blue;
-    background-repeat: no-repeat;
-    color:#FFFFFF;
-    text-align: center;
-    background-size: 100%;
-    font-size: 150%;
-    line-height: 100px;
-}
-.preview{
-    width:15%;
-    margin-left:7%;
-    border: 7px solid white;
-    background-color: orange;
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
 
+body,
+html {
+	font-family: 'Roboto Slab', serif;
 }
-.pics_in_row{
-	display:flex;
+
+.calendar {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	box-shadow: 0 0 1px 0 #cecece, 0 3px 8px #cecece;
+	padding: 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
 }
-p{
-    font-size: larger;
-    text-align: center;
-    background-color: orange;
-    color: black;
+
+.calendar__days {
+	width: 250px;
+	height: 240px;
 }
-button{
-    font-size: larger;
-    text-align: center;
-    background-color: orange;
-    color: black;
-    margin: 10px 10px 30px 10px;
+
+.day-of-the-week {
+	text-align: center;
+	padding: 5px;
+	font-weight: 400;
+	width: 30px;
 }
-#content{
-    padding: 0 18px;
-    background-color: white;
-    width: 90%;
-    margin: auto;
-    padding: 10px 10px 10px 10px;
-    border: 2px solid black;
-    border-radius: 20px
+
+.day-of-the-month {
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	transition: all .1s ease-in-out;
+	border-radius: 2px;
 }
-#buttons{
-    font-size: larger;
-    text-align: center;
-    color: black;
-    margin: 10px 10px 10px 10px;
-    cursor: pointer;
+
+.day-of-the-month:hover {
+	color: #ffffff;
+	background: #dea291;
 }
-#header{
-    border-radius: 20px;
-    width: 70%;
-    margin: 20px auto;
+
+
+.day-of-the-month--weekend {
+	background: #93e0d6;
+	color: #ffffff;
+}
+
+.day-of-the-month--today {
+	background: #de5a4c;
+	color: #ffffff;
+}
+
+.calendar__year,
+.calendar__month {
+	display: block;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+input[type="text"] {
+	border: none;
+	text-align: center;
+	padding: 0;
+	display: inline-block;
+	padding: 5px;
+	outline: none;
+	font-family: 'Roboto Slab', serif;
+	font-size: 18px;
+}
+
+.calendar__prev,
+.calendar__next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+	font-size: 20px;
+	color: lightblue;
+	transition: all .3s ease-in-out;
+}
+
+.calendar__prev:hover,
+.calendar__next:hover {
+	color: lightcoral;
+}
+
+.calendar__prev {
+	left: 10px;
+}
+
+.calendar__next {
+	left: auto;
+	right: 10px;
 }
