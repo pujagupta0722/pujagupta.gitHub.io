@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Photo Gallery</title>
-<link rel="stylesheet" href="stylesheet.css">
-
+	<title>Calender</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-<div>
-        <p id = "image">Hover over an image below to display here.</p>
-<div id="buttons">
-        <button onclick = "openFunction()">Explain pictures</button>
-        <button onclick = "closeFunction()">Hide explaination</button>
-        <p id="content">This photo gallery displays the logos of DataFlair, HTML, CSS and JavaScript. DataFlair use the three technologies to create the webpage. This is an easy way handle JavaScript events and use collapsibles.<p>
-        </div>
-</div>
-<p id="header">DataFlair's Photo Gallery</p>
-    <div class='pics_in_a_row'>
-    <img class = "preview" alt = "DataFlair" src = "data_flair.png" onmouseover = "upDate(this)" onmouseout = "unDo()">
-    <img class = "preview" src = "html.png" alt = "HTML" onmouseover = "upDate(this)" onmouseout = "unDo()">
-    <img class = "preview" src = "images.png" alt = "CSS" onmouseover = "upDate(this)" onmouseout = "unDo()">
-    <img class = "preview" alt = "JavaScript" src = "javascript.png" onmouseover = "upDate(this)" onmouseout = "unDo()">
-    </div>
-  </body>
-        <script src = "script.jss"></script>
+
+<div class="calendar">
+		<div class="calendar__year">
+			<div class="JS-yearControl--prev calendar__prev calendar__year-prev"
+			 data-move="decrement" data-storage="year">
+				<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+			</div>
+			<div class="JS-yearControl--next calendar__next calendar__year-next"
+			 data-move="increment" data-storage="year">
+				<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+			</div>
+			<input id="year" value="" type="text"
+			 readonly class="calendar__year-value">
+		</div>
+
+		<div class="calendar__month">
+			<div class="JS-monthControl--prev calendar__prev calendar__month-prev"
+			 data-move="decrement" data-storage="month">
+				<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+			</div>
+			<div class="JS-monthControl--next calendar__next calendar__month-next"
+			 data-move="increment" data-storage="month">
+				<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+			</div>
+			<input id="month" value="" type="text"
+			 readonly class="calendar__month-value">
+		</div>
+
+		<table id="JS-calendarDays" class="calendar__days">
+		</table>
+	</div>
+
+
+</body>
+<script type="text/javascript" src="script.js"></script>
 </html>
